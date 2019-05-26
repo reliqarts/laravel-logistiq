@@ -1,0 +1,49 @@
+{
+  "name": "reliqarts/laravel-logistiq",
+  "description": "Multi-purpose tracking/logistics package for Laravel.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Reliq",
+      "email": "reliq@reliqarts.com"
+    }
+  ],
+  "require": {
+    "illuminate/support": "^5.8",
+    "reliqarts/laravel-common": "^2.0@dev",
+    "spatie/laravel-event-projector": "^1.3"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^3.8",
+    "phpunit/phpunit": "^8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "ReliqArts\\Logistiq\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ReliqArts\\Logistiq\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "ReliqArts\\Logistiq\\ServiceProvider"
+      ],
+      "aliases": {
+        "LogistiqTracker": "ReliqArts\\Logistiq\\Tracking\\Services\\Tracker"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
