@@ -1,0 +1,8 @@
+parameters:
+  tasks:
+    phpcsfixer:
+      config_file: .php_cs
+      config: ~
+      fixers: []
+      level: ~
+      verbose: true
