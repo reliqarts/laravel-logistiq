@@ -1,8 +1,13 @@
+# grumphp.yml
 parameters:
   tasks:
-    phpcsfixer:
-      config_file: .php_cs
-      config: ~
-      fixers: []
-      level: ~
+    phpcsfixer2:
+      allow_risky: ~
+      cache_file: ~
+      config: .php_cs
+      rules: []
+      using_cache: ~
+      config_contains_finder: true
       verbose: true
+      diff: false
+      triggered_by: ['php']
