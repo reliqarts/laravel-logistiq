@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dbf2d58c98ebb6c7d4b34785cad8e06f",
+    "content-hash": "a9b6f4e431a44b7e16d224882740fb1e",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -5539,6 +5539,48 @@
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
             "time": "2019-04-04T09:56:43+00:00"
+        },
+        {
+            "name": "wearejust/grumphp-extra-tasks",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wearejust/grumphp-extra-tasks.git",
+                "reference": "c173f2177631748c817f953792bfcc2552dffd74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wearejust/grumphp-extra-tasks/zipball/c173f2177631748c817f953792bfcc2552dffd74",
+                "reference": "c173f2177631748c817f953792bfcc2552dffd74",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0",
+                "phpro/grumphp": "~0.15"
+            },
+            "suggest": {
+                "ext-simplexml": "Allow phpdocumentor/phpdocumentor to behave correctly",
+                "friendsofphp/php-cs-fixer": "Allow auto fixing using PHP-CS-FIXER (v1 or v2).",
+                "phpdocumentor/phpdocumentor": "Allow to generate phpDoc if necessary (and add it) before commit"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Wearejust\\GrumPHPExtra\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees van Egmond",
+                    "email": "cees.vanegmond@wearejust.com"
+                }
+            ],
+            "description": "A set of extra tasks for grumphp",
+            "time": "2019-03-26T21:38:11+00:00"
         },
         {
             "name": "webmozart/assert",
