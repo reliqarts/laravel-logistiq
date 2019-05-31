@@ -1,6 +1,7 @@
 /build/*
 /vendor
 /node_modules
+composer.lock
 !.gitkeep
 .idea
 .vscode
