@@ -33,6 +33,7 @@ abstract class Event implements EventContract
      *                         is used by subclass.
      *
      * @see \Illuminate\Queue\SerializesModels
+     * @see \Illuminate\Contracts\Database\ModelIdentifier
      */
     public function getTrackable()
     {
