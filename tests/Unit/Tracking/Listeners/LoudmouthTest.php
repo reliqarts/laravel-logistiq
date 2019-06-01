@@ -10,7 +10,6 @@ declare(strict_types=1);
 
 namespace ReliqArts\Logistiq\Tests\Unit\Tracking\Listeners;
 
-use Illuminate\Contracts\Foundation\Application;
 use Prophecy\Argument;
 use Prophecy\Prophecy\ObjectProphecy;
 use ReliqArts\Logistiq\Tests\TestCase;
@@ -34,11 +33,6 @@ use ReliqArts\Logistiq\Utility\Contracts\Logger;
 final class LoudmouthTest extends TestCase
 {
     private const STATUS_IDENTIFIER = '7fo4-oi43-23ed-po10';
-
-    /**
-     * @var Application
-     */
-    private $application;
 
     /**
      * @var Logger
