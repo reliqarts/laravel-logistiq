@@ -7,7 +7,6 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use ReliqArts\Logistiq\Tracking\Models\TrackingUpdate;
 use ReliqArts\Logistiq\Utility\Contracts\ConfigProvider;
-use ReliqArts\Logistiq\Utility\Exceptions\TableNameNotFound;
 
 class CreateLogistiqTrackingUpdatesTable extends Migration
 {
@@ -18,8 +17,6 @@ class CreateLogistiqTrackingUpdatesTable extends Migration
 
     /**
      * CreateLogistiqTrackingUpdatesTable constructor.
-     *
-     * @throws TableNameNotFound
      */
     public function __construct()
     {
@@ -38,9 +35,9 @@ class CreateLogistiqTrackingUpdatesTable extends Migration
     {
         Schema::create($this->table, function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('trackable_identifier');
-            $table->string('trackable_type');
-            $table->string('status_identifier');
+            $table->string(TrackingUpdate::COLUMN_TRACKABLE_IDENTIFIER);
+            $table->string(TrackingUpdate::COLUMN_TRACKABLE_TYPE);
+            $table->string(TrackingUpdate::COLUMN_STATUS_IDENTIFIER);
             $table->timestamps();
         });
     }

@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace ReliqArts\Logistiq\Tracking\Contracts;
 
-use ReliqArts\Logistiq\Utility\Eloquent\Model;
-
 interface TrackingUpdate
 {
     /**
-     * @param array $attributes
+     * @param string $trackableIdentifier
+     * @param string $trackableType
+     * @param string $statusIdentifier
      *
-     * @return Model|self
+     * @return mixed
      */
-    public function create(array $attributes = []);
+    public function log(string $trackableIdentifier, string $trackableType, string $statusIdentifier);
 }

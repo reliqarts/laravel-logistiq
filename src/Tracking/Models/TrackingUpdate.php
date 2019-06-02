@@ -5,31 +5,26 @@ declare(strict_types=1);
 namespace ReliqArts\Logistiq\Tracking\Models;
 
 use ReliqArts\Logistiq\Tracking\Contracts\TrackingUpdate as TrackingUpdateContract;
-use ReliqArts\Logistiq\Utility\Contracts\ConfigProvider;
-use ReliqArts\Logistiq\Utility\Eloquent\Model;
+use ReliqArts\Logistiq\Utility\Eloquent\TrackingUpdate as EloquentTrackingUpdate;
 
-final class TrackingUpdate extends Model implements TrackingUpdateContract
+final class TrackingUpdate extends EloquentTrackingUpdate implements TrackingUpdateContract
 {
-    public const TABLE_KEY = 'tracking_updates';
-
-    protected $fillable = ['trackable_identifier', 'trackable_type', 'status_identifier'];
-
     /**
-     * @return string
-     */
-    public function getTable()
-    {
-        return with(resolve(ConfigProvider::class))
-            ->getTableNameByKey(self::TABLE_KEY);
-    }
-
-    /**
-     * @param array $attributes
+     * @param string $trackableIdentifier
+     * @param string $trackableType
+     * @param string $statusIdentifier
      *
-     * @return Model|TrackingUpdateContract
+     * @return mixed
      */
-    public function create(array $attributes = [])
-    {
-        return parent::create($attributes);
+    public function log(
+        string $trackableIdentifier,
+        string $trackableType,
+        string $statusIdentifier
+    ) {
+        return parent::create([
+            static::COLUMN_TRACKABLE_IDENTIFIER => $trackableIdentifier,
+            static::COLUMN_TRACKABLE_TYPE => $trackableType,
+            static::COLUMN_STATUS_IDENTIFIER => $statusIdentifier,
+        ]);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-/** @noinspection PhpUndefinedMethodInspection PhpParamsInspection */
+/** @noinspection PhpUndefinedMethodInspection PhpParamsInspection PhpStrictTypeCheckingInspection */
 
 declare(strict_types=1);
 
@@ -99,7 +99,7 @@ final class TrackerTest extends TestCase
             ->shouldBeCalledTimes(1);
 
         $this->trackingUpdate
-            ->create(Argument::type('array'))
+            ->log(Argument::cetera())
             ->shouldBeCalledTimes(1);
 
         $this->subject->setTrackableStatus(
@@ -135,7 +135,7 @@ final class TrackerTest extends TestCase
             ->shouldNotBeCalled();
 
         $this->trackingUpdate
-            ->create(Argument::any())
+            ->log(Argument::cetera())
             ->shouldNotBeCalled();
 
         $this->status
