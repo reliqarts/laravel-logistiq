@@ -12,7 +12,7 @@ It is highly-configurable and easy to use.
 [![Latest Stable Version](https://poser.pugx.org/reliqarts/laravel-logistiq/version?format=flat-square)](https://packagist.org/packages/reliqarts/laravel-logistiq)
 
 ## Key Features
-- Track any *model* through different user-defined statuses.
+- Track any eloquent *model* through different user-defined statuses.
 - Configure one or more events to be fired when a model enters any user-defined status.
 - Supports [laravel-event-projector](https://github.com/spatie/laravel-event-projector) in case you're using Event Sourcing ([What's this?](https://kickstarter.engineering/event-sourcing-made-simple-4a2625113224)).
 
@@ -20,33 +20,38 @@ It is highly-configurable and easy to use.
 
 1. Install via composer:
 
-    ```metadata bash
+    ```bash
     composer require reliqarts/laravel-logistiq
     ```
 
 2. Configuration & Setup:
    1. Publish config file via artisan:
-        ```metadata bash
+        ```bash
         php artisan vendor:publish --tag=reliqarts-logistiq-config
         ```
     2. The model you intend to track must implement `ReliqArts\Logistiq\Tracking\Contracts\Trackable` or extend `ReliqArts\Logistiq\Tracking\Models\Trackable`.
         
         e.g. `App\Order::class`:
-        ```metadata php
+        ```php
+        <?php
+ 
         // ...
+        
         use ReliqArts\Logistiq\Tracking\Models\Trackable;
         
         class Order extends Trackable
         {
             // ...
         }
-        // ...
         ```
     3. Create your `Status` model and implement the `ReliqArts\Logistiq\Tracking\Contracts\Status` contract therein.
         
         e.g. `App\Status::class`:
-        ```metadata php
+        ```php
+        <?php
+        
         // ...
+        
         use ReliqArts\Logistiq\Utility\Eloquent\Model;
         use ReliqArts\Logistiq\Tracking\Contracts\Status as LogistiqStatusContract;
         
@@ -58,16 +63,22 @@ It is highly-configurable and easy to use.
     3. Configure `event_map` to fire additional events when a particular `Status` is hit. 
         
         e.g. excerpt from `/config/reliqats-logistiq`:
-        ```metadata php
+        ```php
         <?php
+        
         // ...
+    
         'event_map' => [
             '230c6c51-3b5b-4eea-9ef2-415e4d8fee00' => [ProductShipped::class, ProductMoved::class]
         ],
+ 
         // ...
         ```
         **Explanation:** With the above snipped of code, whenever the Status with identifier `230c6c51-3b5b-4eea-9ef2-415e4d8fee00` is reached by a *trackable* model the `ProductShipped` and `ProductMoved` events will be fired.
         You have full control over what these events trigger, however each event must expect a `Trackable` as the first constructor argument.
+
+
+--- 
 
 *More on the way...* :truck:
 
