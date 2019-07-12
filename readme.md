@@ -6,7 +6,7 @@ It is highly-configurable and easy to use.
 
 [![Built For Laravel](https://img.shields.io/badge/built%20for-laravel-red.svg?style=flat-square)](http://laravel.com)
 [![License](https://poser.pugx.org/reliqarts/laravel-logistiq/license?format=flat-square)](https://packagist.org/packages/reliqarts/laravel-logistiq)
-[![CircleCI (all branches)](https://img.shields.io/circleci/project/github/reliqarts/laravel-logistiq/master.svg?style=flat-square)](https://circleci.com/gh/reliqarts/laravel-logistiq/tree/master)
+[![Build Status (all)](https://img.shields.io/travis/reliqarts/laravel-logistiq.svg?style=flat-square)](https://travis-ci.org/reliqarts/laravel-logistiq)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/reliqarts/laravel-logistiq.svg?style=flat-square)](https://scrutinizer-ci.com/g/reliqarts/laravel-logistiq/)
 [![Codecov](https://img.shields.io/codecov/c/github/reliqarts/laravel-logistiq.svg?style=flat-square)](https://codecov.io/gh/reliqarts/laravel-logistiq)
 [![Latest Stable Version](https://poser.pugx.org/reliqarts/laravel-logistiq/version?format=flat-square)](https://packagist.org/packages/reliqarts/laravel-logistiq)
