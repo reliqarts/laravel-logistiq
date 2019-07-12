@@ -71,10 +71,10 @@ final class Tracker implements TrackerContract
     private function registerStatusChange(Trackable $trackable, Status $oldStatus, Status $status): void
     {
         $this->eventDispatcher->dispatch(new StatusChanged($trackable, $oldStatus, $status));
-        $this->trackingUpdate->create([
-            'trackable_identifier' => $trackable->getIdentifier(),
-            'trackable_type' => get_class($trackable),
-            'status_identifier' => $status->getIdentifier(),
-        ]);
+        $this->trackingUpdate->log(
+            (string)$trackable->getIdentifier(),
+            get_class($trackable),
+            (string)$status->getIdentifier()
+        );
     }
 }

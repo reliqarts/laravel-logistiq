@@ -16,7 +16,9 @@
   },
   "require-dev": {
     "orchestra/testbench": "^3.8",
-    "phpunit/phpunit": "^8.1"
+    "phpro/grumphp": "^0.15.2",
+    "phpunit/phpunit": "^8.1",
+    "wearejust/grumphp-extra-tasks": "^2.2"
   },
   "autoload": {
     "psr-4": {

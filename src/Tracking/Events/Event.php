@@ -28,9 +28,14 @@ abstract class Event implements EventContract
     }
 
     /**
-     * @return Trackable
+     * @return mixed|Trackable Usually a Trackable implementation.
+     *                         However it may return an unexpected type if \Illuminate\Queue\SerializesModels trait
+     *                         is used by subclass.
+     *
+     * @see \Illuminate\Queue\SerializesModels
+     * @see \Illuminate\Contracts\Database\ModelIdentifier
      */
-    public function getTrackable(): Trackable
+    public function getTrackable()
     {
         return $this->trackable;
     }
