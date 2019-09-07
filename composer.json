@@ -10,6 +10,7 @@
     }
   ],
   "require": {
+    "php": "^7.2",
     "illuminate/support": "^5.8|^6.0",
     "reliqarts/laravel-common": "^2.0@dev",
     "spatie/laravel-event-projector": "^1.3"
